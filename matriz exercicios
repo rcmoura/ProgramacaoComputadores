@@ -1,0 +1,210 @@
+Exercício 1: Soma de Matriz
+Enunciado: Dada uma matriz de inteiros 3x3 preenchida pelo usuário, calcule e exiba a soma de todos os elementos.
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+    int soma, i, j; 
+    soma = 0;
+
+    // Preenchendo a matriz com valores fornecidos pelo usuário
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            soma += matriz[i][j]; // Somando cada elemento à variável 'soma'
+        }
+    }
+
+    cout << "Soma dos elementos da matriz: " << soma << endl;
+
+
+}
+Exercício 2: Média dos Elementos
+Enunciado: Peça ao usuário para preencher uma matriz 3x3 e calcule a média dos elementos.
+
+Solução:
+
+cpp
+Copiar código
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+    int soma, totalElementos, i, j;
+    double media;
+    soma = 0;
+    totalElementos = 3 * 3;
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            soma += matriz[i][j];
+        }
+    }
+
+    media = soma / totalElementos;
+    cout << "Media dos elementos da matriz: " << media << endl;
+
+}
+Exercício 3: Transposição de Matriz
+Enunciado: Dada uma matriz 3x3 preenchida pelo usuário, exiba sua transposta.
+
+Solução:
+
+cpp
+Copiar código
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+    int transposta[3][3];
+    int i, j;
+
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            transposta[j][i] = matriz[i][j]; // Invertendo linhas e colunas
+        }
+    }
+
+    cout << "Matriz Transposta:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) { 
+            cout << transposta[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+}
+
+Exercício 4: Soma das Linhas
+Enunciado: Crie uma matriz 3x3 e calcule a soma de cada linha, exibindo o resultado.
+
+Solução:
+
+cpp
+Copiar código
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+    int somaLinha;
+
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (int i = 0; i < 3; i++) {
+        somaLinha = 0;
+        for (int j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            somaLinha += matriz[i][j]; // Somando os elementos da linha i
+        }
+        cout << "Soma da linha " << i << ": " << somaLinha << endl;
+    }
+
+    return 0;
+}
+Exercício 5: Produto das Colunas
+Enunciado: Dada uma matriz 3x3, calcule o produto dos elementos de cada coluna.
+
+Solução:
+
+cpp
+Copiar código
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3];
+
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+
+    for (int j = 0; j < 3; j++) {
+        int produtoColuna = 1;
+        for (int i = 0; i < 3; i++) {
+            produtoColuna *= matriz[i][j]; // Multiplicando os elementos da coluna j
+        }
+        cout << "Produto da coluna " << j << ": " << produtoColuna << endl;
+    }
+
+    return 0;
+}
+Exercício 6: Matriz Identidade
+Enunciado: Verifique se uma matriz 3x3 é uma matriz identidade.
+
+Solução:
+
+cpp
+Copiar código
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matriz[3][3], j, i;
+    bool identidade = true;
+
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+            if ((i == j && matriz[i][j] != 1) || (i != j && matriz[i][j] != 0)) {
+                identidade = false;
+            }
+        }
+    }
+
+    if (identidade) {
+        cout << "A matriz é identidade." << endl;
+    } else {
+        cout << "A matriz não é identidade." << endl;
+    }
+
+}
+
+Exercício 7: Diagonal Principal
+Enunciado: Exiba a diagonal principal de uma matriz 3x3.
+
+Solução:
+
+cpp
+Copiar código
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int matriz[3][3], i, j;
+
+    cout << "Digite os elementos da matriz 3x3:" << endl;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "Elemento [" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+
+    cout << "Diagonal Principal: ";
+    for (i = 0; i < 3; i++) {
+        cout << matriz[i][i] << " ";
+    }
+    cout << endl;
+
+}
